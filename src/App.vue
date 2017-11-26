@@ -2,7 +2,7 @@
   <div id='app' class='container'>
     <user-registration-form @submitted='handleUserRegistrationFormSubmit'></user-registration-form>
     <hr />
-    <user-list :users='users' key='user'></user-list>
+    <user-list :users='users' @removeUser='removeUser' key='user'></user-list>
   </div>
 </template>
 
@@ -29,18 +29,24 @@
         }
       },
       fetchUsers() {
-        this.$http.get('data.json').
+        this.resource.get().
           then(response => response.json()).
           then(data => this.users = data).
           catch(e => {
             alert('Occurred an error while fetching users')
             console.log(e)
           })
+      },
+      removeUser(key) {
+        this.resource.remove({id: key}).then(() => this.fetchUsers())
       }
     },
     components: {
       userRegistrationForm: UserRegistrationForm,
       userList: UserList
+    },
+    created() {
+      this.resource = this.$resource('users{/id}.json')
     }
   }
 </script>
