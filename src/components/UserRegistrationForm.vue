@@ -29,11 +29,15 @@
       submit() {
         this.loading = true
 
-        this.$http.post('data.json', this.user).
-          then(response => this.$emit('submitted', response.ok)).
-          catch(e => this.$emit('submitted', false)).
-          then(() => this.loading = false)
+        this.resource.save({}, this.user).then(response => {
+          this.$emit('submitted', response.ok)
+        }, errorResponse => {
+          this.$emit('submitted', false)
+        }).then(() => this.loading = false )
       }
+    },
+    created() {
+      this.resource = this.$resource('users{/id}.json')
     }
   }
 </script>
