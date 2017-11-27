@@ -1,10 +1,15 @@
 <template>
-  <div id='app' class='container'>
-    <router-view></router-view>
+  <div id='app'>
+    <navbar></navbar>
+
+    <main role='main'>
+      <router-view></router-view>
+    </main>
   </div>
 </template>
 
 <script>
+  import Navbar from './components/Navbar.vue'
   import UserRegistrationForm from './components/UserRegistrationForm.vue'
   import UserList from './components/UserList.vue'
 
@@ -40,8 +45,9 @@
       }
     },
     components: {
-      userRegistrationForm: UserRegistrationForm,
-      userList: UserList
+      UserRegistrationForm,
+      UserList,
+      Navbar
     },
     created() {
       this.resource = this.$resource('users{/id}.json')
