@@ -1,8 +1,6 @@
 <template>
   <div id='app' class='container'>
-    <user-registration-form @submitted='handleUserRegistrationFormSubmit'></user-registration-form>
-    <hr />
-    <user-list :users='users' @removeUser='removeUser' key='user'></user-list>
+    <router-view></router-view>
   </div>
 </template>
 
