@@ -18,7 +18,7 @@
     <div class='collapse navbar-collapse' id='navbarNav'>
       <ul class='navbar-nav'>
         <li class='nav-item'>
-          <router-link to='/' class='nav-link'>Home</router-link>
+          <router-link to='/' class='nav-link' active-class='active' exatct>Home</router-link>
         </li>
       </ul>
     </div>
