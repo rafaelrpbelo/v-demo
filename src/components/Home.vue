@@ -2,12 +2,10 @@
   <div>
     <div class='row'>
       <div class='col'>
-        <div class='jumbotron jumbotron-fluid'>
-          <div class='container'>
-            <h1 class='display-3'>V-Demo</h1>
-            <p class='lead'>A set of examples written in Vue.js.</p>
-          </div>
-        </div>
+        <jumbotron>
+          <h1 class='display-3'>V-Demo</h1>
+          <p class='lead'>A set of examples written in Vue.js.</p>
+        </jumbotron>
       </div>
     </div>
 
@@ -24,3 +22,11 @@
     </div>
   </div>
 </template>
+
+<script>
+  import Jumbotron from './common/Jumbotron.vue'
+
+  export default {
+    components: { Jumbotron }
+  }
+</script>
