@@ -7,4 +7,4 @@ export const routes = [
   { path: '/users/new', component: UserRegistrationForm }
 ]
 
-export const router = new VueRouter({ routes })
+export const router = new VueRouter({ routes, mode: 'history' })
