@@ -1,10 +1,12 @@
 <template>
   <div id='app'>
-    <navbar></navbar>
+    <router-view name='header'></router-view>
 
     <main role='main'>
       <router-view></router-view>
     </main>
+
+    <router-view name='footer'></router-view>
   </div>
 </template>
 
