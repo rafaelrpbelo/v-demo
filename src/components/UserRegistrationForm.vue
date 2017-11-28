@@ -1,17 +1,37 @@
 <template>
-  <form>
-    <div class='form-group'>
-      <label for='username'>Username</label>
-      <input type='text' class='form-control' id='username' placeholder='Username' v-model='user.username'>
-    </div>
+  <div class='container'>
+    <div class='row mt-5'>
+      <div class='col'>
+        <form>
+          <div class='form-group'>
+            <label for='username'>Username</label>
+            <input
+              type='text'
+              class='form-control'
+              id='username'
+              placeholder='Username'
+              v-model='user.username'>
+          </div>
 
-    <div class='form-group'>
-      <label for='email'>Email</label>
-      <input type='email' class='form-control' id='email' placeholder='Enter email' v-model='user.email'>
-    </div>
+          <div class='form-group'>
+            <label for='email'>Email</label>
+            <input
+              type='email'
+              class='form-control'
+              id='email'
+              placeholder='Enter email'
+              v-model='user.email'>
+          </div>
 
-    <button type='submit' class='btn btn-primary' @click.prevent='submit' :disabled='loading'>Submit</button>
-  </form>
+          <button
+            type='submit'
+            class='btn btn-primary'
+            @click.prevent='submit'
+            :disabled='loading'>Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
