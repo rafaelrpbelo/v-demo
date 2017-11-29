@@ -1,8 +1,10 @@
 import VueRouter from 'vue-router'
-import Home from './components/Home.vue'
+
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
-import UserRegistrationForm from './components/UserRegistrationForm.vue'
+
+const Home = () => System.import('./components/Home.vue')
+const UserRegistrationForm = () => System.import('./components/UserRegistrationForm.vue')
 
 const defaultComponents = (component) => {
   return { default: component, header: Navbar, footer: Footer }
