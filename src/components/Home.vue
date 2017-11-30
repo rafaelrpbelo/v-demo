@@ -18,6 +18,14 @@
             <router-link to='/users/new' class='btn btn-primary'>Go to example</router-link>
           </div>
         </div>
+
+        <div class='col-lg-3 col-md-4 col-sm-6 card'>
+          <div class='card-body'>
+            <h4 class='card-title'>Products CRUD</h4>
+            <p class='card-text'>A complete CRUD of products</p>
+            <router-link to='/products' class='btn btn-primary'>Go to example</router-link>
+          </div>
+        </div>
       </div>
     </div>
   </div>
