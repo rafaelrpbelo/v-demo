@@ -65,6 +65,7 @@
       submitForm() {
         this.resource.save(this.product).then(response => {
           alert('Product created successfully!')
+          this.$router.push('/products')
         }, error => {
           alert('An error has occurred!')
         })
