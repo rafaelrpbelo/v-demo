@@ -14,6 +14,9 @@ const NewProduct    = () => import(/* webpackChunkName: 'products' */ './compone
 const EditProduct   = () => import(/* webpackChunkName: 'products' */ './components/products/EditProduct.vue')
 const Product       = () => import(/* webpackChunkName: 'products' */ './components/products/Product.vue')
 
+// Set of cars components
+const CarsRoot = () => import('./components/CarsRoot.vue')
+
 const defaultComponents = (component) => {
   return { default: component, header: Navbar, footer: Footer }
 }
@@ -26,7 +29,8 @@ export const routes = [
     { path: 'new', component: NewProduct },
     { path: ':id/edit', component: EditProduct },
     { path: ':id', component: Product }
-  ]}
+  ]},
+  { path: '/cars', components: defaultComponents(CarsRoot) }
 ]
 
 export const router = new VueRouter({ routes, mode: 'history' })
